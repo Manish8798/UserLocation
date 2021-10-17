@@ -21,17 +21,17 @@ const App = () => {
             console.log(_.nativeEvent.coordinate);
           }}
           // onPress={() => console.log('map pressed')}
-          showsUserLocation={true}
-          followsUserLocation={true}
-          showsMyLocationButton={true}
+          // showsUserLocation={true}
+          // followsUserLocation={true}
+          // showsMyLocationButton={true}
           showsCompass={true}
           zoomEnabled={true}
           provider={PROVIDER_GOOGLE}
           scrollEnabled={true}
           style={styles.mapView}
           initialRegion={{
-            latitude: 28.439714,
-            longitude: 77.344992,
+            latitude: 28.652031,
+            longitude: 77.214785,
             latitudeDelta: 0.0922,
             longitudeDelta: 0.0421,
           }}
@@ -39,8 +39,8 @@ const App = () => {
         />
         <Icon name="map-marker" size={40} style={styles.mapIcon} />
         <View style={styles.bottomView}>
-          <Text>{latitude}</Text>
-          <Text>{longitude}</Text>
+          <Text style={styles.text}>{latitude}</Text>
+          <Text style={styles.text}>{longitude}</Text>
         </View>
       </View>
     </SafeAreaView>
@@ -66,8 +66,13 @@ const styles = StyleSheet.create({
     paddingHorizontal: 10,
     backgroundColor: 'white',
     position: 'absolute',
-    bottom: 0,
-    start: 0,
-    end: 0,
+    bottom: 10,
+    alignSelf: 'baseline',
+    alignSelf: 'center',
+  },
+  text: {
+    alignSelf: 'center',
+    color: 'black',
+    paddingVertical: 2,
   },
 });
